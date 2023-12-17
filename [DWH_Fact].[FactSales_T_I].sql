@@ -1,10 +1,4 @@
-/****** Object:  StoredProcedure [DWH_Fact].[FactSales_T_I]    Script Date: 11/12/2023 8:51:49 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
+-- Sales fact table SP which reads the Sales data parquet file from data lake, do all required transformations to the dataset, and write the cleaned dataset to the [DWH_Fact].[FactSales] warehouse table.
 CREATE PROC [DWH_Fact].[FactSales_T_I] @FilePath [varchar](500) AS
 
 BEGIN
