@@ -3,7 +3,7 @@
 -- Links - https://learn.microsoft.com/en-us/sql/t-sql/statements/create-external-data-source-transact-sql?view=azure-sqldw-latest&preserve-view=true&tabs=dedicated
 
 -- Create a database master key for the DWH if one does not already exist, using your own password. This key is used to encrypt the credential secret in next step.
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Sqlhesh@datawh&m123';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<enter_your_password>';
 
 
 CREATE DATABASE SCOPED CREDENTIAL [ADLS_credential]
@@ -11,7 +11,7 @@ WITH
 -- IDENTITY = '<storage_account_name>' ,
 IDENTITY = 'heshtestdwhstorage',  
 -- SECRET = '<storage_account_key>'
-SECRET = '1xs16+I0PEmjBgdVLsrVsMCz9JIYQrnWcFAFbPrhpDtlgfD6AY/H0NZTz4aYwBkntcQy2dIHiTrr+ASt7lk8jg==';
+SECRET = '<enter_storage_account_key>';
 
 
 -- Note this example uses a Gen2 secured endpoint (abfss)
