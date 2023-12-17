@@ -1,10 +1,5 @@
-/****** Object:  StoredProcedure [DWH_Dim].[DimCustomer_T_I]    Script Date: 11/12/2023 5:00:01 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
+-- Customer dimension table SP which reads the Customer data parquet file from data lake, do all required transformations to the dataset, and write the cleaned dataset to the [DWH_Dim].[DimCustomer] warehouse table.
+-- Can be used instead of an ADF data flow, but the recommendation is to use an ADF data flow.
 CREATE PROC [DWH_Dim].[DimCustomer_T_I] @FilePath [varchar](500) AS
 
 BEGIN
